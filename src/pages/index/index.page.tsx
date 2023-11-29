@@ -1,6 +1,6 @@
 import React, { createRef, useState } from 'react'
 import $content from './index.page.json'
-import { onCreateUrlToken_Telefunc, onRemoveUrlToken_Telefunc } from './index.page.telefunc'
+import { onCreateUrlToken_Telefunc, onRemoveUrlToken_Telefunc } from './actions.telefunc'
 
 export { Page }
 
