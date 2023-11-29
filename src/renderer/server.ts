@@ -41,6 +41,7 @@ async function createServer() {
     app.use(devMiddleware)
   }
 
+  app.use(express.text({ limit: '5mb' }))
   app.all('/_telefunc', async (req, res) => {
     const context = {}
     const httpResponse = await telefunc({ url: req.originalUrl, method: req.method, body: req.body, context })
