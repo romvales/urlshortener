@@ -1,5 +1,5 @@
-
 import express from 'express'
+import http from 'http'
 import { renderPage } from 'vike/server'
 import { __dirname } from './path.js'
 import { getPagesPathByHostname } from './hostnames.js'
@@ -8,8 +8,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 createServer()
   .then(app => {
-    
-    app.listen({ port: process.env.PORT })
+    http.createServer(app).listen(process.env.PORT)
     console.log('Server running at PORT=3000.')
   })
 
