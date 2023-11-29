@@ -1,6 +1,7 @@
 
 import { UserConfig, defineConfig, splitVendorChunkPlugin } from 'vite'
 
+import { telefunc } from 'telefunc/vite'
 import react from '@vitejs/plugin-react'
 import vike from 'vike/plugin'
 import { resolve } from 'path'
@@ -15,6 +16,7 @@ const config: UserConfig = {
     vike({ 
       disableUrlNormalization: true,
     }),
+    telefunc(),
   ],
 
   optimizeDeps: {},

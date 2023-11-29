@@ -22,10 +22,15 @@
         
         "input0": {
           "title": "Paste the tedious URL here",
-          "placeholder": "(Example: https://docs.google.com/spreadsheets/d/1z16cfSX1u9GZF_...)"
+          "placeholder": "Example: https://docs.google.com/spreadsheets/d/1z16cfSX1u9GZF_..."
         },
 
         "submit": "Get the link"
+      },
+
+      "created_url_token": {
+        "message": "Successfully created a url token link 🎉",
+        "new_link": "Create new link"
       },
 
       "remove_url_token": {
@@ -33,7 +38,7 @@
 
         "input0": {
           "title": "Paste the token here",
-          "placeholder": "(Example: bwk4X)"
+          "placeholder": "Example: bwk4X"
         },
 
         "submit": "Unlink"

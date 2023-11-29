@@ -1,5 +1,8 @@
+// @ts-ignore
+import { telefunc, config } from 'telefunc'
 import express from 'express'
 import http from 'http'
+
 import { renderPage } from 'vike/server'
 import { __dirname } from './path.js'
 import { getPagesPathByHostname } from './hostnames.js'
@@ -11,6 +14,8 @@ createServer()
     http.createServer(app).listen(process.env.PORT)
     console.log('Server running at PORT=3000.')
   })
+
+config.disableNamingConvention = true
 
 async function createServer() {
   const app = express()
@@ -35,6 +40,13 @@ async function createServer() {
 
     app.use(devMiddleware)
   }
+
+  app.all('/_telefunc', async (req, res) => {
+    const context = {}
+    const httpResponse = await telefunc({ url: req.originalUrl, method: req.method, body: req.body, context })
+    const { body, statusCode, contentType } = httpResponse
+    res.status(statusCode).contentType(contentType).send(body)
+  })
 
   app.get('**', async (req, res, next) => {
     const initContext = {
