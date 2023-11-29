@@ -15,37 +15,53 @@ const Page: React.FunctionComponent = () => {
 
   const [urlToken, setUrlToken] = useState<string>()
 
+  let cTimeout: NodeJS.Timeout | undefined
+
   const onCreateUrlToken = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault()
+
+    if (cTimeout) {
+      clearTimeout(cTimeout)
+      cTimeout = undefined
+    }
     
     const form = ev.target as HTMLFormElement
     const data = new FormData(form)
 
     if (form.checkValidity()) {
-      onCreateUrlToken_Telefunc(data.get('url') as string)
-        .then(res => {
-          setCreateStatus(true)
-          setResult(res)
-          form.reset()
-        })
+      cTimeout = setTimeout(() => {
+        onCreateUrlToken_Telefunc(data.get('url') as string)
+          .then(res => {
+            setCreateStatus(true)
+            setResult(res)
+            form.reset()
+          })
+      }, 300)
     }
   }
 
   const onRemoveUrlToken = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault()
 
+    if (cTimeout) {
+      clearTimeout(cTimeout)
+      cTimeout = undefined
+    }
+
     const form = ev.target as HTMLFormElement
     const data = new FormData(form)
 
     if (form.checkValidity()) {
-      onRemoveUrlToken_Telefunc(data.get('token') as string)
-        .then(res => {
-          if (res.op) {
-            setUrlToken(data.get('token') as string)
-            setUnlinkedStatus(true)
-            setResult(res)
-          }
-        })
+      cTimeout = setTimeout(() => {
+        onRemoveUrlToken_Telefunc(data.get('token') as string)
+          .then(res => {
+            if (res.op) {
+              setUrlToken(data.get('token') as string)
+              setUnlinkedStatus(true)
+              setResult(res)
+            }
+          })
+      }, 300)
     }
   }
 
