@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 createServer()
   .then(app => {
     
-    app.listen({ port: 3000 })
+    app.listen({ port: process.env.PORT })
     console.log('Server running at PORT=3000.')
   })
 

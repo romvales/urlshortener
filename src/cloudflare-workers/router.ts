@@ -125,15 +125,13 @@ router
     const resourceUrl = url.searchParams.get('resourceUrl')
 
     if (/(GET|HEAD|POST|DELETE)/.test(req.method) && resourceUrl?.length) {
-      console.log(req)
-      req = new Request(resourceUrl, req) as any
+      req = new Request(resourceUrl, { ...req }) as any
       req.headers.set('Origin', new URL(resourceUrl).origin)
-
       let res = await fetch(req)
-      res = new Response(res.body, res)
+      res = new Response(res.body, req)
 
       res.headers.set('Access-Control-Allow-Origin', origins.join(','))
-      res.headers.set('Vary', 'Origin')
+      res.headers.append('Vary', 'Origin')
 
       return res
     }

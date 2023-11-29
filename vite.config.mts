@@ -10,8 +10,7 @@ export default defineConfig({
   plugins: [ 
     react(), 
     vike({ 
-      prerender: true, 
-      disableUrlNormalization: true
+      disableUrlNormalization: true,
     }),
   ],
 
