@@ -1,0 +1,12 @@
+name = "romvales-urlshortener-worker"
+
+compatibility_date = "2023-11-28"
+send_metrics = false
+
+main = 'dist/server/cloudflare-workers.js'
+
+[vars]
+AWS_FUNCTION_URL = "https://7dqs4wqy5edlay4tip6lkrxu7q0jujin.lambda-url.ap-northeast-1.on.aws/"
+
+[dev]
+port = 4080

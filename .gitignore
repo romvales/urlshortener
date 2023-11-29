@@ -1,0 +1,4 @@
+dist
+wranger.toml
+node_modules
+.env

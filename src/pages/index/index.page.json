@@ -1,0 +1,48 @@
+{
+  "header": {
+    "logo": "u.romvales",
+    "links": [
+
+    ]
+  },
+
+  "main": {
+    "headline": "Shorten any long URLs with my name",
+    "headline_message": "Transform long and unreadable link into a short one using my ridiculously short name.",
+    "headline_url": "https://u.romvales.com/",
+
+    "$forms": {
+      "tab0": "Make short link",
+      "tab1": "Unlink Token",
+
+      "main_title": "Trim long link",
+
+      "create_url_token": {
+        "title": "Shorten an unreadable link",
+        
+        "input0": {
+          "title": "Paste the tedious URL here",
+          "placeholder": "(Example: https://docs.google.com/spreadsheets/d/1z16cfSX1u9GZF_...)"
+        },
+
+        "submit": "Get the link"
+      },
+
+      "remove_url_token": {
+        "title": "Unlink a link token",
+
+        "input0": {
+          "title": "Paste the token here",
+          "placeholder": "(Example: bwk4X)"
+        },
+
+        "submit": "Unlink"
+      }
+
+    }
+  },
+
+  "footer": {
+    
+  }
+}
