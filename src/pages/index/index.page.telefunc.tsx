@@ -16,7 +16,7 @@ async function onCreateUrlToken_Telefunc(create_full_url: string): Promise<objec
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ url: create_full_url }),
-  }).then(res => res.json())
+  }).then(res => res.json()) as object
 }
 
 async function onRemoveUrlToken_Telefunc(token: string) {

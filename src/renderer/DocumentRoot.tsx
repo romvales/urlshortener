@@ -1,5 +1,6 @@
 import type { FunctionComponent } from 'react'
 import type { PageContextServer } from 'vike/types'
+import React from 'react'
 
 export { DocumentRoot }
 
@@ -50,7 +51,7 @@ const DocumentRoot: DocumentRootComponent = props => {
 
           <div 
             id='entrypoint' 
-            className='me__app min-h-[100vh] bg-zinc-950 text-white'
+            className='me__app min-h-[100vh] bg-zinc-950 text-slate-100'
             dangerouslySetInnerHTML={render}></div>
 
         </body>
