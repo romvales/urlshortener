@@ -6,6 +6,7 @@ import { DocumentRoot } from './DocumentRoot'
 import { Shell } from './Shell'
 import { dangerouslySkipEscape } from 'vike/server'
 import { PageContextProvider } from './pageContext'
+import React from 'react'
 
 export { render, passToClient }
 

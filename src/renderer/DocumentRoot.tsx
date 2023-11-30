@@ -4,6 +4,8 @@ import React from 'react'
 
 export { DocumentRoot }
 
+// @ts-ignore
+import thumbnail from '../assets/thumbnail.png'
 import $content from '../pages/index/index.page.json'
 
 type DocumentRootComponent = FunctionComponent<{
@@ -39,10 +41,12 @@ const DocumentRoot: DocumentRootComponent = props => {
           <meta name='description' content={main.headline_message} />
 
           <meta property='og:title' content={title} />
+          <meta property='og:type' content={'website'} />
           <meta property='og:description' content={main.headline_message} />
           <meta property='og:url' content={main.headline_url} />
+          <meta property='og:image' content={thumbnail} />
 
-          <script src={'https://cdn.tailwindcss.com'}></script>
+          <meta name='twitter:card' content={'summary'} />
         </head>
         <body>
           <noscript>
